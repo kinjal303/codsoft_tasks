@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.calculator {
+  width: 360px;
+  padding: 25px;
+  background: #222;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#display {
+  width: 100%;
+  height: 75px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  font-size: 32px;
+  text-align: right;
+  background: #111;
+  color: white;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  height: 60px;
+  border: none;
+  border-radius: 14px;
+  font-size: 21px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #444;
+  color: white;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #555;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button[data-value="+"] ,
+button[data-value="-"] ,
+button[data-value="*"] ,
+button[data-value="/"] {
+  background: #ff9500;
+}
+
+button[data-action="equals"] {
+  background: #28a745;
+}
+
+button[data-action="clear"] {
+  background: #dc3545;
+}
+
+button[data-action="delete"] {
+  background: #6c757d;
+}
+
+button[data-action="percent"] {
+  background: #17a2b8;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+.history-btn {
+  width: 100%;
+  margin-top: 15px;
+  height: 45px;
+  background: #555;
+  color: white;
+}
+
+#history {
+  margin-top: 15px;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border-radius: 10px;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+#history p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    width: 92%;
+    padding: 20px;
+  }
+}
